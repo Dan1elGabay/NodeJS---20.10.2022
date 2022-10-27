@@ -1,23 +1,20 @@
-//* === express ===
+//* === express, cors, body-parser ===
 
 //* require and activate express
 const express = require('express');
 const app = express();
 const path = require('path');
-const mysql = require('mysql')
 
-//* static
+//* static folder
 app.use(express.static('./public'))
 
 
-
-//* === handle different routes ===
+//* ===  Cors-handle different routes ===
 const cors = require('cors');
 app.use(cors());
 
 
 //* === body-parser (npm package) ===
-
 const bodyParser = require('body-parser');
 //* enable express to parse html FORM data inside the request body
 app.use(bodyParser.urlencoded({
@@ -28,15 +25,20 @@ app.use(bodyParser.json());
 
 
 
+
 //* handle GET request to '/' root folder
 app.get('/', (req, res) => {
     console.log('New GET request entered 🚩');
-    res.status(200).send('Your are good to go')
+    res.send('Welcome to our database demo server root');
+
 })
+
+const courseRouts = require('./routs/course.routs');
+app.use('/api/courses',courseRouts)
+
 
 
 //* === run the server (on port 5000) ===
-
 app.listen(5000, () => {
     console.log('Server is running on port 5000 ⚽');
 })
