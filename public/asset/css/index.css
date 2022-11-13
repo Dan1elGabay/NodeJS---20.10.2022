@@ -1,0 +1,117 @@
+@import url(popup.css);
+@import url(table.css);
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+  background: #fece0c;
+}
+
+h1{
+    text-align: center;
+    margin-top: 2%;
+}
+
+.functionalBtns{
+  position: relative;
+  top: 50%;
+  left: 30%;
+  max-width: 200px;
+  width: 80%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+.container h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+
+
+
+
+
+.wrapper .btn button[type="button"]{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: #fece0c;
+  color: #332902;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+
+
+
+
+.container{
+  position: relative;
+  top: 50px;
+  margin: 0 auto;
+  width: 80%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 4px 4px 2px rgba(254,236,164,1);
+  text-align: center; 
+}
+
+
+
+
+
+
+.container button{
+  border: 0px;
+  margin-right: 30px;
+  padding: 10px;
+  text-align: center;
+  background: #fece0c;
+  color: #332902;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  border: 1px solid #000000;
+}
+
+.container button:hover{
+  background: #ffffff;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #616161;
+}
+
+
+.btnCell{
+  display: flex;
+}
+
+.btnCell button[type="button"]{
+  margin-right: 15px;
+}
+.getCorsesBtn a{
+  text-decoration: none;
+}
+
+

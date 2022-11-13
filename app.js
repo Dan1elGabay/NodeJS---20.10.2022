@@ -4,9 +4,13 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+require('dotenv').config();
+
+// *console.log(process.env.SERVER_PORT);
+
 
 //* static folder
-app.use(express.static('./public'))
+app.use(express.static('./public/asset'))
 
 
 //* ===  Cors-handle different routes ===
@@ -29,8 +33,12 @@ app.use(bodyParser.json());
 //* handle GET request to '/' root folder
 app.get('/', (req, res) => {
     console.log('New GET request entered 🚩');
-    res.send('Welcome to our database demo server root');
+    res.status(200).sendFile(path.join(__dirname, './public/asset/index.html'));
+})
 
+app.get('/courses', (req, res) => {
+    console.log('New GET request entered 🚩');
+    res.status(200).sendFile(path.join(__dirname, './public/asset/courses.html'));
 })
 
 const courseRouts = require('./routs/course.routs');
@@ -40,8 +48,7 @@ app.use('/api/courses',courseRouts)
 
 //* === run the server (on port 5000) ===
 app.listen(5000, () => {
-    console.log('Server is running on port 5000 ⚽');
+    console.log(`\n =======${new Date().toDateString()}=======`);
+    console.log('Server is running on port http://localhost:5000 ⚽');
 })
-
-
 
