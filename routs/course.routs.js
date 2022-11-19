@@ -1,6 +1,4 @@
-const {
-    query
-} = require('express');
+
 const express = require('express')
 const router = express.Router()
 const db = require('../db/pool.js'); // db is a connection pool
@@ -34,12 +32,12 @@ router.delete('/:id', function (req, res) {
     db.query(`UPDATE courses SET Deleted=1 WHERE Id=${parseInt(req.params.id)}`, function(err, rows, fields) {
         
         if(err) {
-            console.log(`    [X] Error deleting record (ID:${req.params.id})`);
+            console.log(`[X] Error deleting record (ID:${req.params.id})`);
             res.status(500).json({error: `Error deleting record (ID:${req.params.id})`});
             return;
         }
 
-        console.log(`    [v] Successfully deleted one record (ID:${req.params.id})`);
+        console.log(`[v] Successfully deleted one record (ID:${req.params.id})`);
         res.status(200).json({message: `Successfully deleted one record (ID:${req.params.id})`})
     });
 });
